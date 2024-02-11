@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuitem_voting"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/voting"
+        />
+    <item
+        android:id="@+id/menuitem_breeds"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/breeds"
+        />
+    <item
+        android:id="@+id/menuitem_favs"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/favs"
+        />
+</menu>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CatImagesApp</string>
+    <string name="voting">Voting</string>
+    <string name="breeds">Breeds</string>
+    <string name="favs">Favs</string>
+</resources>
