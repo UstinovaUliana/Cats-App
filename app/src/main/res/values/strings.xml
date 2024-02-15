@@ -3,4 +3,6 @@
     <string name="voting">Voting</string>
     <string name="breeds">Breeds</string>
     <string name="favs">Favs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
