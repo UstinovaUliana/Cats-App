@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.catimagesapp.model.Cat
-import com.example.catimagesapp.databinding.ItemCatBinding
+
 
 class CatsRecyclerAdapter(val action: (items: MutableList<Cat>, changed: Cat, checked: Boolean) -> Unit): ListAdapter<Cat, CatsRecyclerAdapter.CatsViewHolder>(DiffCallback()) {
 
@@ -42,13 +42,6 @@ class CatsRecyclerAdapter(val action: (items: MutableList<Cat>, changed: Cat, ch
         override fun areContentsTheSame(oldItem: Cat, newItem: Cat) =
             oldItem == newItem
     }
-    /*
-    private class DiffCallback : DiffUtil.ItemCallback() {
 
-
-    }
-    private class CatsViewHolder()
-    ove
-     */
 
 }
