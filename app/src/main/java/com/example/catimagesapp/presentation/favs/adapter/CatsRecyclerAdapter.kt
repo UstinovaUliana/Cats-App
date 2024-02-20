@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.catimagesapp.model.Cat
+import com.example.catimagesapp.databinding.ItemCatBinding
+import com.example.catimagesapp.domain.cats.model.Cat
 
 
 class CatsRecyclerAdapter(val action: (items: MutableList<Cat>, changed: Cat, checked: Boolean) -> Unit): ListAdapter<Cat, CatsRecyclerAdapter.CatsViewHolder>(DiffCallback()) {
@@ -30,7 +31,7 @@ class CatsRecyclerAdapter(val action: (items: MutableList<Cat>, changed: Cat, ch
 
     override fun onBindViewHolder(holder: CatsViewHolder, position: Int) {
         currentList[position].also{
-            holder.imageCat.setContent(it.imageId)
+            holder.imageCat.setImageResource(it.imageId)
             holder.textCat.text = it.id.toString()
         }
     }
