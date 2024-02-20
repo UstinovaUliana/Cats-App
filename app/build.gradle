@@ -19,9 +19,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_PRAY_URL", "\"https://muslimsalat.com\"")
+            buildConfigField("String", "API_KEY", "\"66a93bb659c0c944b5426eeadb5e757d\"")
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_PRAY_URL", "\"https://muslimsalat.com\"")
+            buildConfigField("String", "API_KEY", "\"66a93bb659c0c944b5426eeadb5e757d\"")
         }
     }
     compileOptions {
@@ -60,6 +66,11 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
     //
     implementation "io.insert-koin:koin-android:3.5.3"
+    //REST
+    implementation "com.squareup.retrofit2:retrofit:2.8.1"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
 }
 
 // Allow references to generated code
