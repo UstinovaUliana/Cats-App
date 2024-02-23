@@ -10,10 +10,9 @@ import com.example.catimagesapp.databinding.ItemCatBinding
 import com.example.catimagesapp.domain.cats.model.Cat
 
 
-class CatsRecyclerAdapter(val action: (items: MutableList<Cat>, changed: Cat, checked: Boolean) -> Unit): ListAdapter<Cat, CatsRecyclerAdapter.CatsViewHolder>(DiffCallback()) {
-
-    //private val cats: ArrayList<Cat> = ArrayList()
-    private lateinit var context: Context
+class CatsRecyclerAdapter(
+    val action: (changed: Cat, checked: Boolean) -> Unit
+): ListAdapter<Cat, CatsRecyclerAdapter.CatsViewHolder>(DiffCallback()) {
 
     class CatsViewHolder(binding: ItemCatBinding): RecyclerView.ViewHolder(binding.root) {
         val imageCat = binding.imageViewCat
@@ -24,15 +23,14 @@ class CatsRecyclerAdapter(val action: (items: MutableList<Cat>, changed: Cat, ch
         parent: ViewGroup,
         viewType: Int
     ): CatsViewHolder {
-        context = parent.context
         val viewBinding = ItemCatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CatsViewHolder(viewBinding)
     }
 
     override fun onBindViewHolder(holder: CatsViewHolder, position: Int) {
         currentList[position].also{
-            holder.imageCat.setImageResource(it.imageId)
-            holder.textCat.text = it.id.toString()
+            holder.imageCat.setImageURI(it.imageId)
+            holder.textCat.text = it.id
         }
     }
 
