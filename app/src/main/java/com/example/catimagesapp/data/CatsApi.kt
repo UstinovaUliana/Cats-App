@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface CatsApi {
 
-    @GET("")
+    @GET("/v1/images/search")
     suspend fun getCats(
         @Query("limit") limit: Int,
         @Query("api_key") apiKey: String? = BuildConfig.API_KEY
